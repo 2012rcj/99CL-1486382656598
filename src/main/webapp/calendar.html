@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="build/kalendae.css" type="text/css" charset="utf-8">
+<!-- <script src="src/moment.js" type="text/javascript" charset="utf-8"></script>
+	<script src="build/kalendae.js" type="text/javascript" charset="utf-8"></script> -->
+	<script src="build/kalendae.standalone.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+<body>
+	
+	
+  
+
+	<script type="text/javascript" charset="utf-8">
+		
+
+		var k = new Kalendae({
+			attachTo:document.body,
+			months:2,
+			mode:'multiple',
+			//direction: 'future',
+			//selected:[Kalendae.moment()],
+			
+		});
+
+	
+		console.log(k.getSelected());
+		
+		k.subscribe('change', function () {
+   var selectedDates = this.getSelectedAsText();
+   document.getElementById("count").innerHTML = selectedDates.length;
+});
+
+	</script>
+
+	  	
+	<div>&nbsp Number of days selected: <span id="count"></span>
+</div>
+    <table>
+        <tr>
+          <td>
+        Total Leave:
+          </td>
+          <td>
+       <input type="text" id="Total" name="No" size="23" >
+          </td>
+       </tr>
+       
+       <tr>
+           Types of Leave:&nbsp&nbsp&nbsp&nbsp&nbsp
+              
+       <select name="types" id="types">
+           <option>Select</option>
+           <option>Seek Leave</option>
+               <option>Annual Leave</option>
+               <option>Official Leave</option>
+               
+               </select>
+                  
+       </tr>
+        <tr>
+        <td>
+         Leaves Availed:
+          </td>
+          <td>
+       <input type="text" id="Reason" name="RoL" size="23" >
+          </td>
+    </tr> 
+    <tr>
+        <td>
+         Leaves Remaining:
+          </td>
+          <td>
+       <input type="text" id="Reason" name="RoL" size="23" >
+          </td>
+    </tr> 
+        </table>
